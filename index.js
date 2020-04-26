@@ -3,6 +3,11 @@ import Moveable from "moveable";
 let moveable;
 
 document.getElementById('moveable').addEventListener('click', (event) => {
+  let target = document.getElementById('target');
+  if (target) {
+    target.removeAttribute('id');
+  }
+
   if (moveable) {
     moveable.destroy();
   }
@@ -10,6 +15,7 @@ document.getElementById('moveable').addEventListener('click', (event) => {
   moveable = new Moveable(document.body)
 
   if (event.target.className === 'square') {
+    event.target.id = "target";
     moveable.setState({
         target: event.target,
         draggable: true,
@@ -54,7 +60,10 @@ document.getElementById('button').addEventListener('click', (event) => {
 });
 
 window.addEventListener("keydown", function(event) {
-  if (event.code === 'Backspace') {
-    document.querySelector('.square').remove();
+  let target = document.getElementById('target');
+  if (event.code === 'Backspace' && target) {
+    moveable.destroy();
+    target.remove();
+    moveable = new Moveable(document.body)
   }
 }, true);
