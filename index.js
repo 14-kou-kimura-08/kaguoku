@@ -46,9 +46,9 @@ document.getElementById('moveable').addEventListener('click', (event) => {
 });
 
 document.getElementById('button').addEventListener('click', (event) => {
-  let div = document.createElement('div');
-  div.setAttribute('id', 'target');
-  div.setAttribute('class', 'square');
-  div.setAttribute('style', 'width: 100px; height: 100px; background-color: blue;');
-  document.getElementById('moveable').appendChild(div);
+  let image = document.createElement('img');
+  image.src = event.target.src;
+  image.setAttribute('class', 'square');
+  image.setAttribute('style', 'width: 100px; height: 100px; position: absolute;');
+  document.getElementById('moveable').appendChild(image);
 });
