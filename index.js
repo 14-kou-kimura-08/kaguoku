@@ -52,3 +52,9 @@ document.getElementById('button').addEventListener('click', (event) => {
   image.setAttribute('style', 'width: 100px; height: 100px; position: absolute;');
   document.getElementById('moveable').appendChild(image);
 });
+
+window.addEventListener("keydown", function(event) {
+  if (event.code === 'Backspace') {
+    document.querySelector('.square').remove();
+  }
+}, true);
