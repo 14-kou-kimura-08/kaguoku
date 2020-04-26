@@ -44,3 +44,11 @@ document.getElementById('moveable').addEventListener('click', (event) => {
       });
   }
 });
+
+document.getElementById('button').addEventListener('click', (event) => {
+  let div = document.createElement('div');
+  div.setAttribute('id', 'target');
+  div.setAttribute('class', 'square');
+  div.setAttribute('style', 'width: 100px; height: 100px; background-color: blue;');
+  document.getElementById('moveable').appendChild(div);
+});
