@@ -51,7 +51,7 @@ document.getElementById('moveable').addEventListener('click', (event) => {
   }
 });
 
-document.getElementById('button').addEventListener('click', (event) => {
+document.getElementById('buttons').addEventListener('click', (event) => {
   if (event.target.src) {
     let image = document.createElement('img');
     image.src = event.target.src;

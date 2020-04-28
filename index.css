@@ -1,0 +1,58 @@
+html, body, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, p {
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-size: 14px;
+  color: #191919;
+  background-color: #FFFFFF;
+}
+
+.header {
+  background-color: orange;
+  width: 100vw;
+  height: 40px;
+}
+
+.main {
+  display: flex;
+  height: calc(100vh - 40px);
+  min-height: 600px;
+}
+
+#buttons {
+  background-color: red;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  width: 220px;
+  min-width: 220px;
+  padding: 0px 5px;
+  height: 100%;
+  text-align: center;
+}
+
+#buttons > img {
+  align-self: flex-start;
+  width: 70px;
+  height: 70px;
+  padding: 10px 20px;
+}
+
+#buttons > img:hover {
+  cursor: pointer;
+}
+
+#moveable {
+  background-color: blue;
+  padding: 10px;
+  width: calc(100vw - 240px);
+  height: 100%;
+}
