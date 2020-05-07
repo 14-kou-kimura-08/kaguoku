@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="node_modules/swiper/css/swiper.min.css">
   </head>
   <body>
     <div class="header">
@@ -26,6 +27,24 @@
       <div id="moveable">
         <img src="./public/image/bed.png" alt="">
       </div>
+    </div>
+
+    <!-- Slider main container -->
+    <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide" style="background-color: red; width: 100px;">Slide 1</div>
+            <div class="swiper-slide" style="background-color: blue; width: 100px;">Slide 2</div>
+            <div class="swiper-slide" style="background-color: green; width: 100px;">Slide 3</div>
+            <div class="swiper-slide" style="background-color: orange; width: 100px;">Slide 4</div>
+            <div class="swiper-slide" style="background-color: gray; width: 100px;">Slide 5</div>
+        </div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
     </div>
     <script src="./public/js/bundle.js"></script>
   </body>

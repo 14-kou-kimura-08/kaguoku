@@ -56,3 +56,8 @@ body {
   width: calc(100vw - 240px);
   height: 100%;
 }
+
+.swiper-container {
+    width: 800px;
+    height: 300px;
+}
