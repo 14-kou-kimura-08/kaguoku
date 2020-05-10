@@ -57,7 +57,7 @@ document.getElementById('buttons').addEventListener('click', (event) => {
     let image = document.createElement('img');
     image.src = event.target.src;
     image.setAttribute('class', 'square');
-    image.setAttribute('style', 'width: 100px; height: 100px; position: absolute;');
+    image.setAttribute('style', 'width: 60px; height: 60px; position: absolute;');
     document.getElementById('moveable').appendChild(image);
   }
 });
@@ -78,21 +78,22 @@ var mySwiper = new Swiper ('.swiper-container', {
     loop: true,
     slidesPerView: 1,
     spaceBetween: 10,
+    // centeredSlides: true,
     breakpoints: {
       // when window width is >= 320px
-      320: {
+      480: {
         slidesPerView: 2,
         spaceBetween: 20
       },
       // when window width is >= 480px
-      480: {
+      640: {
         slidesPerView: 3,
         spaceBetween: 30
       },
       // when window width is >= 640px
-      640: {
-        slidesPerView: 4,
-        spaceBetween: 40
+      800: {
+        slidesPerView: 5,
+        spaceBetween: 20
       }
     },
 
@@ -112,3 +113,18 @@ var mySwiper = new Swiper ('.swiper-container', {
     //   el: '.swiper-scrollbar',
     // },
   })
+
+
+  function toggleNav() {
+    var body = document.body;
+    var hamburger = document.getElementById('js-hamburger');
+    var blackBg = document.getElementById('js-black-bg');
+
+    hamburger.addEventListener('click', function() {
+      body.classList.toggle('nav-open');
+    });
+    blackBg.addEventListener('click', function() {
+      body.classList.remove('nav-open');
+    });
+  }
+  toggleNav();

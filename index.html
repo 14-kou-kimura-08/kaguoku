@@ -9,41 +9,49 @@
   </head>
   <body>
     <div class="header">
-      <p>ナビバーです</p>
+      <span>カグオク</span>
+      <nav class="global-nav">
+        <ul class="global-nav__list">
+          <li class="global-nav__item"><a href="">Room 1</a></li>
+          <li class="global-nav__item"><a href="">Room 2</a></li>
+          <li class="global-nav__item"><a href="">Room 3</a></li>
+          <li class="global-nav__item"><a href="">What is This?</a></li>
+        </ul>
+      </nav>
+      <div class="hamburger" id="js-hamburger">
+        <span class="hamburger__line hamburger__line--1"></span>
+        <span class="hamburger__line hamburger__line--2"></span>
+        <span class="hamburger__line hamburger__line--3"></span>
+      </div>
+      <div class="black-bg" id="js-black-bg"></div>
     </div>
     <div class="main">
-      <div id="buttons">
-        <img src="./public/image/bed.png" alt="bed">
-        <img src="./public/image/double-bed.png" alt="double-bed">
-        <img src="./public/image/bed.png" alt="bed">
-        <img src="./public/image/double-bed.png" alt="double-bed">
-        <img src="./public/image/bed.png" alt="bed">
-        <img src="./public/image/double-bed.png" alt="double-bed">
-        <img src="./public/image/bed.png" alt="bed">
-        <img src="./public/image/double-bed.png" alt="double-bed">
-        <img src="./public/image/bed.png" alt="bed">
-        <img src="./public/image/double-bed.png" alt="double-bed">
-      </div>
-      <div id="moveable">
-        <img src="./public/image/bed.png" alt="">
-      </div>
-    </div>
+      <div id="moveable"></div>
 
-    <!-- Slider main container -->
-    <div class="swiper-container">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide" style="background-color: red; width: 100px;">Slide 1</div>
-            <div class="swiper-slide" style="background-color: blue; width: 100px;">Slide 2</div>
-            <div class="swiper-slide" style="background-color: green; width: 100px;">Slide 3</div>
-            <div class="swiper-slide" style="background-color: orange; width: 100px;">Slide 4</div>
-            <div class="swiper-slide" style="background-color: gray; width: 100px;">Slide 5</div>
+      <!-- Slider main container -->
+      <div style="position: relative;">
+        <div class="swiper-container" id="buttons">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <!-- <div class="swiper-slide" style="background-color: #ffffff;"></div> -->
+                <img class="swiper-slide" src="./public/image/bed.png" alt="bed">
+                <img class="swiper-slide" src="./public/image/double-bed.png" alt="double-bed">
+                <img class="swiper-slide" src="./public/image/bed.png" alt="bed">
+                <img class="swiper-slide" src="./public/image/double-bed.png" alt="double-bed">
+                <img class="swiper-slide" src="./public/image/bed.png" alt="bed">
+                <img class="swiper-slide" src="./public/image/double-bed.png" alt="double-bed">
+                <!-- <div class="swiper-slide" style="background-color: red; width: 100px;">Slide 1</div>
+                <div class="swiper-slide" style="background-color: blue; width: 100px;">Slide 2</div>
+                <div class="swiper-slide" style="background-color: green; width: 100px;">Slide 3</div>
+                <div class="swiper-slide" style="background-color: orange; width: 100px;">Slide 4</div> -->
+            </div>
+
         </div>
-
         <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev" id="prev"></div>
+        <div class="swiper-button-next" id="next"></div>
+      </div>
 
     </div>
     <script src="./public/js/bundle.js"></script>
