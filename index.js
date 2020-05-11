@@ -15,7 +15,7 @@ document.getElementById('moveable').addEventListener('click', (event) => {
 
   moveable = new Moveable(document.body)
 
-  if (event.target.className === 'square') {
+  if (event.target.className === 'furniture') {
     event.target.id = "target";
     moveable.setState({
         target: event.target,
@@ -56,8 +56,7 @@ document.getElementById('buttons').addEventListener('click', (event) => {
   if (event.target.src) {
     let image = document.createElement('img');
     image.src = event.target.src;
-    image.setAttribute('class', 'square');
-    image.setAttribute('style', 'width: 60px; height: 60px; position: absolute;');
+    image.setAttribute('class', 'furniture');
     document.getElementById('moveable').appendChild(image);
   }
 });
@@ -74,23 +73,24 @@ window.addEventListener("keydown", function(event) {
 
 var mySwiper = new Swiper ('.swiper-container', {
     // Optional parameters
-    // direction: 'vertical',
     loop: true,
-    slidesPerView: 1,
-    spaceBetween: 10,
-    // centeredSlides: true,
+    grabCursor: true,
     breakpoints: {
-      // when window width is >= 320px
+      0: {
+        slidesPerView: 3,
+        spaceBetween: 10
+      },
+      // when window width is >= 480px
       480: {
         slidesPerView: 2,
         spaceBetween: 20
       },
-      // when window width is >= 480px
+      // when window width is >= 640px
       640: {
         slidesPerView: 3,
         spaceBetween: 30
       },
-      // when window width is >= 640px
+      // when window width is >= 800px
       800: {
         slidesPerView: 5,
         spaceBetween: 20
@@ -98,20 +98,15 @@ var mySwiper = new Swiper ('.swiper-container', {
     },
 
     // If we need pagination
-    // pagination: {
-    //   el: '.swiper-pagination',
-    // },
+    pagination: {
+      el: '.swiper-pagination'
+    },
 
     // Navigation arrows
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-
-    // And if we need scrollbar
-    // scrollbar: {
-    //   el: '.swiper-scrollbar',
-    // },
   })
 
 
