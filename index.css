@@ -5,6 +5,7 @@ html, body, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, p {
 }
 
 html, body {
+  width: 100%;
   height: 100%;
 }
 
@@ -12,12 +13,6 @@ body {
   font-size: 14px;
   color: #191919;
   background-color: #FFFFFF;
-}
-
-.header {
-  background-color: orange;
-  width: 100vw;
-  height: 50px;
 }
 
 .header > span {
@@ -35,7 +30,6 @@ body {
   width: 100%;
   height: 50px;
   background-color: orange;
-  /* box-shadow: 0 2px 6px rgba(0,0,0,.16); */
 }
 .global-nav {
   position: fixed;
@@ -98,7 +92,7 @@ body {
   position: fixed;
   left: 0;
   top: 0;
-  width: 100vw;
+  width: 340px;
   height: 100vh;
   z-index: 100;
   background-color: #000;
@@ -129,34 +123,60 @@ body {
 }
 /* ここまでがハンバーガーメニュー */
 
+
 .main {
+  width: 100%;
   height: calc(100vh - 50px);
-  min-height: 600px;
 }
 
 #moveable {
-  width: 100vw;
-  height: calc(80vh - 20px);
+  width: 100%;
+  height: 80%;
   text-align: center;
+  position: relative;
 }
 
-#moveable > img {
-  width: 700px;
-  margin-top: 50px;
+.room {
+  width: auto;
+  margin: auto;
+  height: 330px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.furniture {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 30px);
 }
 
 .swiper-container {
-    width: 480px;
-    height: 80px;
-    margin: 10px 0;
+  /* １つの要素を80pxとする、 */
+  width: calc(60px * 3 + 10px * 2);
+  height: 60px;
+  margin: 10px 0;
 }
 
-.swiper-wrapper > img:hover {
-  cursor: pointer;
+.swiper-pagination {
+  width: 100%;
+}
+
+.swiper-pagination > span {
+  margin: 1px;
+}
+
+.swiper-pagination-bullet-active {
+  background: orange !important;
 }
 
 #prev {
-  left: calc((100vw - 530px) / 2);
+  left: 15px;
   color: orange;
 }
 
@@ -165,10 +185,56 @@ body {
 }
 
 #next {
-  right: calc((100vw - 530px) / 2);
+  right: 15px;
   color: orange;
 }
 
 #next:focus {
   outline:0;
+}
+
+@media screen and (min-width: 480px) {
+    .main {
+      height: calc(100vh - 50px);
+      min-height: 600px;
+    }
+
+    #moveable {
+      width: 100vw;
+      height: calc(80vh - 20px);
+      text-align: center;
+    }
+
+    #moveable > img {
+      width: 700px;
+      margin-top: 50px;
+    }
+
+    .swiper-container {
+        width: 580px;
+        height: 100px;
+        margin: 10px 0;
+    }
+
+    .swiper-wrapper > img:hover {
+      cursor: pointer;
+    }
+
+    #prev {
+      left: calc((100vw - 680px) / 2);
+      color: orange;
+    }
+
+    #prev:focus {
+      outline:0;
+    }
+
+    #next {
+      right: calc((100vw - 680px) / 2);
+      color: orange;
+    }
+
+    #next:focus {
+      outline:0;
+    }
 }
