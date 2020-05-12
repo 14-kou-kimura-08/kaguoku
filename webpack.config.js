@@ -12,6 +12,5 @@ module.exports = {
     filename: 'bundle.js',
     // 出力先のパス（絶対パスを指定する必要がある）
     path: path.resolve(__dirname, 'public/js')
-  },
-  watch: true
+  }
 };
