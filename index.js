@@ -14,8 +14,7 @@ document.getElementById('moveable').addEventListener('click', (event) => {
   }
 
   moveable = new Moveable(document.body)
-
-  if (event.target.className === 'furniture') {
+  if (event.target.className.match(/furniture/)) {
     event.target.id = "target";
     moveable.setState({
         target: event.target,
@@ -57,6 +56,9 @@ document.getElementById('buttons').addEventListener('click', (event) => {
     let image = document.createElement('img');
     image.src = event.target.src;
     image.setAttribute('class', 'furniture');
+    if (event.target.src.match(/chair/)) {
+      image.classList.add('chair');
+    }
     document.getElementById('moveable').appendChild(image);
   }
 });
