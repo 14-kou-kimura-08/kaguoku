@@ -61,16 +61,17 @@ body {
 .global-nav__item {
   text-align: center;
   padding: 0 14px;
-}
-.global-nav__item a {
   display: block;
   padding: 8px 0;
   border-bottom: 1px solid #eee;
-  text-decoration: none;
   color: #111;
 }
-.global-nav__item a:hover {
+.global-nav__item:hover {
   background-color: #eee;
+}
+.global-nav__item a {
+  text-decoration: none;
+  color: #111;
 }
 .hamburger__line {
   position: absolute;

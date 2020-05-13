@@ -72,6 +72,18 @@ window.addEventListener("keydown", function(event) {
   }
 }, true);
 
+document.getElementById('js-hamburger').addEventListener('click', (event) => {
+  let target = document.getElementById('target');
+  if (target) {
+    target.removeAttribute('id');
+  }
+
+  if (moveable) {
+    moveable.destroy();
+  }
+  moveable = new Moveable(document.body)
+})
+
 
 var mySwiper = new Swiper ('.swiper-container', {
     // Optional parameters
@@ -112,16 +124,38 @@ var mySwiper = new Swiper ('.swiper-container', {
   })
 
 
-  function toggleNav() {
-    var body = document.body;
-    var hamburger = document.getElementById('js-hamburger');
-    var blackBg = document.getElementById('js-black-bg');
+function toggleNav() {
+  var body = document.body;
+  var hamburger = document.getElementById('js-hamburger');
+  var blackBg = document.getElementById('js-black-bg');
+  var nav = document.getElementById('nav');
 
-    hamburger.addEventListener('click', function() {
-      body.classList.toggle('nav-open');
-    });
-    blackBg.addEventListener('click', function() {
-      body.classList.remove('nav-open');
-    });
-  }
-  toggleNav();
+  hamburger.addEventListener('click', function() {
+    body.classList.toggle('nav-open');
+  });
+  blackBg.addEventListener('click', function() {
+    body.classList.remove('nav-open');
+  });
+  nav.addEventListener('click', function() {
+    body.classList.remove('nav-open');
+  });
+}
+toggleNav();
+
+function changeRoom(event) {
+  document.querySelector(".room_1").addEventListener('click', function() {
+    document.querySelector(".room").src = 'image/room_1.jpeg';
+    document.querySelector(".room").style = "height: 280px";
+  });
+
+  document.querySelector(".room_2").addEventListener('click', function() {
+    document.querySelector(".room").src = 'image/room_2.jpeg';
+    document.querySelector(".room").style = "";
+  });
+
+  document.querySelector(".room_3").addEventListener('click', function() {
+    document.querySelector(".room").src = 'image/room_3.jpeg';
+    document.querySelector(".room").style = "height: 200px";
+  });
+}
+changeRoom();
