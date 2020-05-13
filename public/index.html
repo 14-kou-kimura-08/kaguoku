@@ -27,6 +27,20 @@
       <div class="black-bg" id="js-black-bg"></div>
     </div>
     <div class="main">
+      <div style="margin-top: 60px">
+        <style>
+          .thumb {
+            height: 75px;
+            border: 1px solid #000;
+            margin: 10px 5px 0 0;
+          }
+        </style>
+        <label for="file">
+          部屋の画像を選ぶ
+          <input type="file" id="file" name="file" style="display:none">
+        </label>
+        <output id="list"></output>
+      </div>
       <div id="moveable">
         <img src="image/room_1.jpeg" alt="room_1" class="room">
       </div>

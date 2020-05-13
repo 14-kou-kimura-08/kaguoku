@@ -159,3 +159,32 @@ function changeRoom(event) {
   });
 }
 changeRoom();
+
+
+// room画像を選択
+if (window.File && window.FileReader) {
+  function handleFileSelect(evt) {
+    var file = evt.target.files[0]; // File object
+
+    if (file.type.match('image.*')) {
+      var reader = new FileReader();
+
+      reader.onload = (function(theFile) {
+        return function(e) {
+          // Render thumbnail.
+          var span = document.createElement('span');
+          span.innerHTML = ['<img class="thumb" src="', e.target.result,
+                            '" title="', escape(theFile.name), '"/>'].join('');
+          document.getElementById('list').insertBefore(span, null);
+        };
+      })(file);
+
+      // Read in the image file as a data URL.
+      reader.readAsDataURL(file);
+    };
+  }
+
+  document.getElementById('file').addEventListener('change', handleFileSelect, false);
+} else {
+  alert('The File APIs are not fully supported in this browser.');
+}
