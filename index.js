@@ -173,7 +173,7 @@ if (window.File && window.FileReader) {
         return function(e) {
           // Render thumbnail.
           var span = document.createElement('span');
-          span.innerHTML = ['<img class="thumb" src="', e.target.result,
+          span.innerHTML = ['<img class="thumb" id="target" src="', e.target.result,
                             '" title="', escape(theFile.name), '"/>'].join('');
           document.getElementById('list').insertBefore(span, null);
         };
@@ -181,6 +181,52 @@ if (window.File && window.FileReader) {
 
       // Read in the image file as a data URL.
       reader.readAsDataURL(file);
+
+      reader.onloadend = function() {
+        moveable = new Moveable(document.body);
+        moveable.setState({
+            target: document.getElementById('target'),
+            draggable: true,
+            rotatable: true,
+            scalable: true,
+            throttleDrag: 0,
+            throttleRotate: 0,
+            throttleScale: 0,
+            rotationPosition: "top",
+            origin: false,
+            keepRatio: true,
+        });
+
+        const frame = {
+          translate: [0, 0],
+          rotate: 0,
+          scale: [1, 1],
+        };
+        moveable
+          .on("dragStart", ({ set }) => {
+            set(frame.translate);
+          })
+          .on("drag", ({ target, transform }) => {
+            console.log(transform);
+            target.style.transform = transform;
+          })
+          .on("dragEnd", ({ target, isDrag, clientX, clientY }) => {
+            console.log("onDragEnd", target, isDrag);
+          })
+          .on("rotateStart", ({ set }) => {
+              set(frame.rotate);
+          }).on("rotate", ({ target, transform }) => {
+              target.style.transform = transform;
+          }).on("rotateEnd", ({ target, isDrag, clientX, clientY }) => {
+              console.log("onRotateEnd", target, isDrag);
+          }).on("scaleStart", ({ set, dragStart }) => {
+              set(frame.scale);
+          }).on("scale", ({ target, scale, drag, transform }) => {
+              target.style.transform = transform;
+          }).on("scaleEnd", ({ target, isDrag, clientX, clientY }) => {
+              console.log("onScaleEnd", target, isDrag);
+          });
+      }
     };
   }
 
