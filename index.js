@@ -142,24 +142,6 @@ function toggleNav() {
 }
 toggleNav();
 
-function changeRoom(event) {
-  document.querySelector(".room_1").addEventListener('click', function() {
-    document.querySelector(".room").src = 'image/room_1.jpeg';
-    document.querySelector(".room").style = "height: 280px";
-  });
-
-  document.querySelector(".room_2").addEventListener('click', function() {
-    document.querySelector(".room").src = 'image/room_2.jpeg';
-    document.querySelector(".room").style = "";
-  });
-
-  document.querySelector(".room_3").addEventListener('click', function() {
-    document.querySelector(".room").src = 'image/room_3.jpeg';
-    document.querySelector(".room").style = "height: 200px";
-  });
-}
-changeRoom();
-
 
 // room画像を選択
 if (window.File && window.FileReader) {
@@ -173,9 +155,11 @@ if (window.File && window.FileReader) {
         return function(e) {
           // Render thumbnail.
           var span = document.createElement('span');
-          span.innerHTML = ['<img class="thumb" id="target" src="', e.target.result,
-                            '" title="', escape(theFile.name), '"/>'].join('');
-          document.getElementById('list').insertBefore(span, null);
+          let image = document.createElement('img');
+          image.src = e.target.result;
+          image.setAttribute('id', 'target');
+          image.style.height = '150px';
+          document.getElementById('moveable').appendChild(image);
         };
       })(file);
 

@@ -1,7 +1,8 @@
-html, body, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, p {
+* {
   font-size: 100%;
   margin: 0;
   padding: 0;
+  box-sizing:border-box;
 }
 
 html, body {
@@ -57,22 +58,33 @@ body {
   margin: 0;
   padding: 0;
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 1px solid #000;
 }
-.global-nav__item {
-  text-align: center;
-  padding: 0 14px;
-  display: block;
-  padding: 8px 0;
-  border-bottom: 1px solid #eee;
+
+.global-nav__list > a {
+  font-size: 18px;
+  text-decoration: none;
   color: #111;
+  text-align: center;
+  width: 300px;
+  line-height: 150px;
+  border-left: 1px solid #000;
+  border-bottom: 1px solid #000;
 }
+
+.global-nav__item {
+  width: 150px;
+  padding: 50px;
+  border-left: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
 .global-nav__item:hover {
   background-color: #eee;
 }
-.global-nav__item a {
-  text-decoration: none;
-  color: #111;
-}
+
 .hamburger__line {
   position: absolute;
   width: 18px;
