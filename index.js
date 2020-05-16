@@ -1,5 +1,4 @@
 import Moveable from "moveable";
-import Swiper from "swiper";
 
 let moveable;
 
@@ -83,45 +82,6 @@ document.getElementById('js-hamburger').addEventListener('click', (event) => {
   }
   moveable = new Moveable(document.body)
 })
-
-
-var mySwiper = new Swiper ('.swiper-container', {
-    // Optional parameters
-    loop: true,
-    grabCursor: true,
-    breakpoints: {
-      0: {
-        slidesPerView: 3,
-        spaceBetween: 10
-      },
-      // when window width is >= 480px
-      480: {
-        slidesPerView: 2,
-        spaceBetween: 20
-      },
-      // when window width is >= 640px
-      640: {
-        slidesPerView: 3,
-        spaceBetween: 30
-      },
-      // when window width is >= 800px
-      800: {
-        slidesPerView: 5,
-        spaceBetween: 20
-      }
-    },
-
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination'
-    },
-
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  })
 
 
 function toggleNav() {

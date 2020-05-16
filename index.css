@@ -173,43 +173,6 @@ body {
   height: 30px;
 }
 
-.swiper-container {
-  /* １つの要素を80pxとする、 */
-  width: calc(60px * 3 + 10px * 2);
-  height: 60px;
-  margin: 10px 0;
-}
-
-.swiper-pagination {
-  width: 100%;
-}
-
-.swiper-pagination > span {
-  margin: 1px;
-}
-
-.swiper-pagination-bullet-active {
-  background: orange !important;
-}
-
-#prev {
-  left: 15px;
-  color: orange;
-}
-
-#prev:focus {
-  outline:0;
-}
-
-#next {
-  right: 15px;
-  color: orange;
-}
-
-#next:focus {
-  outline:0;
-}
-
 @media screen and (min-width: 480px) {
     .main {
       height: calc(100vh - 50px);
@@ -225,33 +188,5 @@ body {
     #moveable > img {
       width: 700px;
       margin-top: 50px;
-    }
-
-    .swiper-container {
-        width: 580px;
-        height: 100px;
-        margin: 10px 0;
-    }
-
-    .swiper-wrapper > img:hover {
-      cursor: pointer;
-    }
-
-    #prev {
-      left: calc((100vw - 680px) / 2);
-      color: orange;
-    }
-
-    #prev:focus {
-      outline:0;
-    }
-
-    #next {
-      right: calc((100vw - 680px) / 2);
-      color: orange;
-    }
-
-    #next:focus {
-      outline:0;
     }
 }
