@@ -76,6 +76,7 @@ body {
 
 .global-nav__item {
   width: 150px;
+  height: 150px;
   padding: 50px;
   border-left: 1px solid #000;
   border-bottom: 1px solid #000;
@@ -171,6 +172,13 @@ body {
 .chair {
   width: 30px;
   height: 30px;
+}
+
+.moveable-control {
+    width: 30px !important;
+    height: 30px !important;
+    margin-top: -15px !important;
+    margin-left: -15px !important;
 }
 
 @media screen and (min-width: 480px) {
