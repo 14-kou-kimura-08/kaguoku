@@ -118,7 +118,9 @@ if (window.File && window.FileReader) {
           let image = document.createElement('img');
           image.src = e.target.result;
           image.setAttribute('id', 'target');
-          image.style.height = '150px';
+          image.style.width = '300px';
+          image.style.height = '300px';
+          image.style.objectFit = 'contain';
           document.getElementById('moveable').appendChild(image);
         };
       })(file);
@@ -133,12 +135,15 @@ if (window.File && window.FileReader) {
             draggable: true,
             rotatable: true,
             scalable: true,
+            pinchable: true,
             throttleDrag: 0,
             throttleRotate: 0,
             throttleScale: 0,
             rotationPosition: "top",
             origin: false,
             keepRatio: true,
+            renderDirections: ["nw", "ne", "sw", "se"],
+            edge: true,
         });
 
         const frame = {
