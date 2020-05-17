@@ -10,14 +10,19 @@
   </head>
   <body>
     <div class="header">
-      <span>カグオク</span>
+      <span>room.space</span>
       <nav class="global-nav" id="nav">
-        <ul class="global-nav__list">
-          <li class="global-nav__item room_1">Room 1</li>
-          <li class="global-nav__item room_2">Room 2</li>
-          <li class="global-nav__item room_3">Room 3</li>
-          <li class="global-nav__item"><a href="">What is This?</a></li>
-        </ul>
+        <div class="global-nav__list" id="buttons">
+          <img class="global-nav__item" src="image/bed_1.png" alt="bed_1">
+          <img class="global-nav__item" src="image/bed_2.png" alt="bed_2">
+          <img class="global-nav__item" src="image/chair.png" alt="chair">
+          <img class="global-nav__item" src="image/sofa_1.png" alt="sofa_1">
+          <img class="global-nav__item" src="image/sofa_2.png" alt="sofa_2">
+          <img class="global-nav__item" src="image/table_1.png" alt="table_1">
+          <img class="global-nav__item" src="image/table_2.png" alt="table_2">
+          <img class="global-nav__item" src="image/table_3.png" alt="table_3">
+          <a href="" class="link">What is This?</a>
+        </div>
       </nav>
       <div class="hamburger" id="js-hamburger">
         <span class="hamburger__line hamburger__line--1"></span>
@@ -27,32 +32,13 @@
       <div class="black-bg" id="js-black-bg"></div>
     </div>
     <div class="main">
-      <div id="moveable">
-        <img src="image/room_1.jpeg" alt="room_1" class="room">
+      <div style="margin-top: 60px;">
+        <label for="file">
+          部屋の画像を選ぶ
+          <input type="file" id="file" name="file" style="display:none">
+        </label>
       </div>
-
-      <!-- Slider main container -->
-      <div style="position: relative;">
-        <div class="swiper-container" id="buttons">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-                <!-- Slides -->
-                <img class="swiper-slide" src="image/bed_1.png" alt="bed_1">
-                <img class="swiper-slide" src="image/bed_2.png" alt="bed_2">
-                <img class="swiper-slide" src="image/chair.png" alt="chair">
-                <img class="swiper-slide" src="image/sofa_1.png" alt="sofa_1">
-                <img class="swiper-slide" src="image/sofa_2.png" alt="sofa_2">
-                <img class="swiper-slide" src="image/table_1.png" alt="table_1">
-                <img class="swiper-slide" src="image/table_2.png" alt="table_2">
-                <img class="swiper-slide" src="image/table_3.png" alt="table_3">
-            </div>
-        </div>
-        <div class="swiper-pagination"></div>
-        <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev" id="prev"></div>
-        <div class="swiper-button-next" id="next"></div>
-      </div>
-
+      <div id="moveable"></div>
     </div>
     <script src="js/bundle.js"></script>
   </body>
